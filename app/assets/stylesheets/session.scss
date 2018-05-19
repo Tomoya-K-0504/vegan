@@ -1,0 +1,158 @@
+@import "application";
+$border-main: 1px solid #666666;
+
+%home-section {
+  border: $border-main;
+  margin: 10px auto;
+  height: 80%;
+  width: 80%;
+}
+
+%home-section-child {
+  * {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.header {
+
+}
+
+body {
+  padding-top: 70px;
+}
+
+.logo-small {
+  width: 100px;
+}
+
+
+
+.whats-vc {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
+
+}
+
+.service-content {
+  @extend %home-section;
+  @extend %home-section-child;
+
+  img {
+    width: 40%;
+  }
+
+  a:hover {
+    box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+  }
+}
+
+.flow-to-join {
+  @extend %home-section;
+  @extend %home-section-child;
+
+  .merit {
+
+  }
+
+  .member-flow {
+    img {
+      width: 200px;
+    }
+    .right-arrow {
+      width: 30px;
+    }
+  }
+}
+
+.greeting {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
+}
+
+.vision, .mission, .value, .how-it-works, .history {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
+}
+
+.how-it-works {
+  img {
+    width: 400px;
+  }
+}
+
+.about-service, .v-talk, .v-meet, .v-cook, .v-choise {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
+}
+
+.about-join, .flow-to-join-detail, .merit-detail, .v-meet, .v-cook, .v-choise {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
+}
+
+.about-join {
+  img {
+    width: 300px;
+  }
+}
+
+.flow-to-join-detail {
+
+  img {
+    width: 200px;
+  }
+
+  .down-arrow {
+    width: 70px;
+  }
+
+  .step {
+    margin: auto 10%;
+    border: $border-main;
+
+    .step-image {
+      float: left;
+    }
+
+    .step-text {
+      margin: 2% auto;
+      padding-left: 1em;
+      text-align: left;
+      float: left;
+      vertical-align: middle;
+    }
+  }
+  .step-gap {
+    margin: 1em 10%;
+  }
+  .down-arrow {
+    float: left;
+    margin-left: 7%;
+
+  }
+
+  .agree-check {
+    padding: auto 1em;
+    float: right;
+  }
+}
+
+.become-member {
+  margin: 1% auto;
+}
+
+.merit-detail {
+
+  img {
+    width: 20%;
+    display: inline-block;
+  }
+}

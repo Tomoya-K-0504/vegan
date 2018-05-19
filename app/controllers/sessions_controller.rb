@@ -5,7 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def home
-    render 'home'
+  end
+
+  def whats_vc
+  end
+
+  def flow_to_join
   end
 
   def create

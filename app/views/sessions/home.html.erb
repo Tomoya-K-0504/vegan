@@ -1,33 +1,92 @@
 <body>
 
-<header class="header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">ロゴ</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
+<%= render 'sessions/header' %>
 
 <section class="vision">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <p class="lead">やさしい暮らし</p>
       <h1 class="display-3">笑顔あふれるVegan Lifeを共創する</h1>
+      <p class="logo-small"></p>
     </div>
   </div>
 </section>
 
+
+<section class="whats-vc">
+  <h2>VCとは</h2>
+  <%= image_tag 'rogo_full.png' %>
+  <p>VCとは、日本ヴィーガン・コミュニティ(Japanese Vegans’ Community) の略称です。<br>
+    VCは、ヴィーガンを実践するメンバーによって構成され、一人ひとりの力を合わせ、
+    「笑顔溢れるVegan Lifeを共創する」ことを1st Missionに掲げる民間の非営利組織です。<br><br>
+
+    志を共にするVCメンバー(VCに加入するメンバー)の一人ひとりが協同して、
+    お金を出し合い・事業の運営に参加し・商品やサービスを利用することによって、
+    Visionである「今、そして未来も、誰もが笑顔でいられる社会」の実現を達成します。</p>
+  <div>
+    <a href="/whats-vc" class="btn btn-info">もっと詳しく</a>
+  </div>
+</section>
+
+<section class="service-content">
+  <h2>事業内容</h2>
+  <h4>VCが運営する事業を紹介します。</h4>
+  <a href="/service-content#v-talk" class="service-content-one">
+    <%= image_tag 'v-talk.png' %>
+  </a>
+  <a href="/service-content#v-meat" class="service-content-one">
+    <%= image_tag 'v-meet.png' %>
+  </a>
+  <a href="/service-content#v-cook" class="service-content-one">
+    <%= image_tag 'v-cook.png' %>
+  </a>
+  <a href="/service-content#v-choice" class="service-content-one">
+    <%= image_tag 'v-choice.png' %>
+  </a>
+  <%= image_tag '' %>
+  <%= image_tag '' %>
+</section>
+
+<section class="flow-to-join">
+  <h2>入会の流れ</h2>
+  <h4>VCは、希望者全員が入会することができます。<br>
+      VCメンバーになるメリットと流れを紹介します。
+  </h4>
+  <div class="merit">
+    <h5>メンバーになる3つのメリット</h5>
+    <%= image_tag 'merit_1.png' %>
+    <%= image_tag 'merit_2.png' %>
+    <%= image_tag 'merit_3.png' %>
+  </div>
+
+  <div class="member-flow">
+    <h5>メンバーになる流れ</h5>
+    <%= image_tag 'step_1.png' %>
+    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+    <%= image_tag 'step_2.png' %>
+    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+    <%= image_tag 'step_3.png' %>
+    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+    <%= image_tag 'step_4.png' %>
+  </div>
+  <div>
+    <a href="/flow-to-join" class="btn btn-primary">メンバーになる</a>
+  </div>
+  <div class="num-members">
+    <p>現在のメンバー数</p>
+    <p>1</p>
+  </div>
+</section>
+
+<section class="greeting">
+  <h2>代表の挨拶</h2>
+  <%= image_tag 'greeting-photo.png' %>
+  <p>
+    高校三年生の秋に、“ぺちゃんこの猫”を見たことがきっかけに、多くの事実を知りヴィーガンになりました。<br>
+    それから数ヶ月後、あるヴィーガンフェスティバルに参加して多くのベジタリアンやヴィーガンの人々と出会いました。彼らは、他者や未来のことを思いやる心を持ち、実際に行動するとても優しい人達でした。しかし、ヴィーガンであるからこそ友人を失ったり、普段の生活に不便を感じている人が少なくありませんでした。<br>
+    平和な世界を実現する為には、今を生きる人々が他者や未来への思いやりの心を持って行動することが必要ですが、そのような優しい人が、優しいが故に笑顔で暮らせていないことに大きな違和感を抱きました。<br>
+    このような思いから、VCでは平和な世界を志す多くの仲間と協同し、「笑顔溢れるVegan Lifeを共創する」ことを1st Missionに掲げ、「今、そして未来も、誰もが笑顔でいられる社会」を最短距離で創ることを目指します。
+  </p>
+</section>
 
 </body>

@@ -1,0 +1,87 @@
+<body>
+
+<%= render 'sessions/header' %>
+
+<section class="about-join">
+  <h2>加入について</h2>
+  <%= image_tag 'about-join.png' %>
+  <p>
+    VCのメンバーになると、様々なサービスを利用できます。<br>
+    VCは、共にVisionを実現するという志を持つメンバーから成ります。<br>
+    全メンバーがお金を出し合い、運営に参加し、利用できるコミュニティです。<br>
+    VCは、開かれたコミュニティを目指し、誰でもメンバ〜になることが可能になっています。<br>
+    志を共にする仲間と手を結び、Vision実現の為に「笑顔溢れるVegan Lifeを共創する」使命を果たします。
+  </p>
+</section>
+
+<section class="flow-to-join-detail">
+  <h2>加入する流れ</h2>
+  <h4>ネットから簡単に加入することができます。</h4>
+  <div class="step clearfix">
+      <%= image_tag 'step_1.png', class: 'step-image' %>
+      <p class="step-text">
+        VCメンバーとなる前に、契約の内容をご確認ください。<br>
+        契約の内容はこちらからお願いします。
+      </p>
+  </div>
+  <div class="step-gap clearfix">
+    <%= image_tag 'down-arrow.png', class: "down-arrow" %>
+    <div class="agree-check">
+      <a href="/whats-vc" class="btn btn-info">契約内容を確認する</a>
+    </div>
+  </div>
+  <div class="step clearfix">
+    <%= image_tag 'step_2.png', class: 'step-image' %>
+    <p class="step-text">
+      お名前などのメンバー情報の記入をいただきます。<br>
+      インターネットで受け付けています。
+    </p>
+  </div>
+  <div class="step-gap clearfix">
+    <%= image_tag 'down-arrow.png', class: "down-arrow" %>
+  </div>
+  <div class="step clearfix">
+    <%= image_tag 'step_3.png', class: 'step-image' %>
+    <p class="step-text">
+      VCの加入に当たり、事業や活動の元手となる出資金をお願いしています。<br>
+      また、利用にあたっては、各メンバーに合わせた料金の選択が可能です。
+    </p>
+  </div>
+  <div class="step-gap clearfix">
+    <%= image_tag 'down-arrow.png', class: "down-arrow" %>
+    <div class="agree-check">
+      <a href="/whats-vc" class="btn btn-info">出資金・利用料について</a>
+    </div>
+  </div>
+  <div class="step clearfix">
+    <%= image_tag 'step_4.png', class: 'step-image' %>
+    <p class="step-text">
+      VCに加入しメンバーとなれば、各事業様々な形で運営に参加できます。<br>
+      また、多くのサービスを受けられるようになります。
+    </p>
+  </div>
+
+  <div class="become-member">
+    <a href="/member-register" class="btn btn-primary">メンバーになる</a>
+  </div>
+
+</section>
+
+<section class="merit-detail">
+  <h2>メンバーになるメリット</h2>
+  <p>
+    メンバーになると、VCの様々なサービスの利用や
+    イベントの参加はもちろん、他にも多くのメリットが存在します。<br>
+    その内の大きな三つのメリットを紹介します。
+  </p>
+  <div class="clearfix">
+    <%= image_tag 'merit-detail_1.png' %>
+    <%= image_tag 'merit-detail_2.png' %>
+    <%= image_tag 'merit-detail_3.png' %>
+  </div>
+  <div class="become-member">
+    <a href="/member-register" class="btn btn-primary">メンバーになる</a>
+  </div>
+</section>
+
+</body>
