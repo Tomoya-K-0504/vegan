@@ -4,6 +4,7 @@ $border-main: 1px solid #666666;
 %home-section {
   border: $border-main;
   margin: 10px auto;
+  padding: 1% 2%;
   height: 80%;
   width: 80%;
 }
@@ -71,7 +72,27 @@ body {
 .greeting {
   @extend %home-section;
   @extend %home-section-child;
-  @extend %center-img;
+  background-image: url("greeting_small.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  //img {
+  //  position: relative;
+  //  width: 100%;
+  //  z-index: 1;
+  //  box-shadow: inset 0 0 15px 15px white;
+  //}
+
+  font-size: 20px;
+
+  .greet-text {
+    position: relative;
+    z-index: 2;
+    margin: 2% auto;
+    padding-left: 40%;
+    text-align: left;
+    vertical-align: middle;
+    size: 5em;
+  }
 }
 
 .vision, .mission, .value, .how-it-works, .history {
@@ -92,7 +113,7 @@ body {
   @extend %center-img;
 }
 
-.about-join, .flow-to-join-detail, .merit-detail, .v-meet, .v-cook, .v-choise {
+.about-join, .flow-to-join-detail, .merit-detail {
   @extend %home-section;
   @extend %home-section-child;
   @extend %center-img;
@@ -149,10 +170,90 @@ body {
   margin: 1% auto;
 }
 
-.merit-detail {
-
+.greeting-detail {
+  @extend %home-section;
+  @extend %home-section-child;
+  @extend %center-img;
   img {
-    width: 20%;
-    display: inline-block;
+    width: 95%;
+    border: #2E2F30;
+  }
+
+  .greeting-detail-text {
+    padding: 2%;
+  }
+}
+
+.rep-history {
+  @extend %home-section;
+  @extend %home-section-child;
+  @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+  /*Pen code from this point on*/
+  .btn {
+    //clear:both;
+    white-space:nowrap;
+    font-size:.8em;
+    display:inline-block;
+    border-radius:5px;
+    margin:2px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    overflow:hidden
+  }
+
+  .btn:hover {
+    //box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .btn:focus {
+    //box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .btn > span,.btn-icon > i {
+    padding:13px;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    transition:all .5s;
+    line-height:1em
+  }
+
+  .btn > span {
+    //padding:14px 18px 16px;
+    white-space:nowrap;
+    color:#FFF;
+    background:#b8b8b8
+  }
+
+  .btn:focus > span {
+    background:#9a9a9a
+  }
+
+  .btn-icon:hover > i,.btn-icon:focus > i {
+    color:#FFF
+  }
+
+  .btn-icon > span {
+    border-radius:5px 5px 5px 5px
+  }
+
+  /*Facebook*/
+  .btn-facebook:hover > i,.btn-facebook:focus > i {
+    color:#3b5998
+  }
+
+  .btn-facebook > span {
+    background:#3b5998
+  }
+
+  /*Twitter*/
+  .btn-twitter:hover > i,.btn-twitter:focus > i {
+    color:#55acee
+  }
+
+  .btn-twitter > span {
+    background:#55acee
   }
 }

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'whats-vc', to: 'sessions#whats_vc'
   get 'service-content', to: 'sessions#service_content'
   get 'flow-to-join', to: 'sessions#flow_to_join'
+  get 'greeting', to: 'sessions#greeting'
 
   
 end
