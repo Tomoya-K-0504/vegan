@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Job</th>
+      <th>Born in</th>
+      <th>Living address</th>
+      <th>Principle</th>
+      <th>Trigger</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+      <th>Contact</th>
+      <th>Career</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td><%= user.sex %></td>
+        <td><%= user.age %></td>
+        <td><%= user.job %></td>
+        <td><%= user.born_in %></td>
+        <td><%= user.living_address %></td>
+        <td><%= user.principle %></td>
+        <td><%= user.trigger %></td>
+        <td><%= user.twitter %></td>
+        <td><%= user.facebook %></td>
+        <td><%= user.contact %></td>
+        <td><%= user.career %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

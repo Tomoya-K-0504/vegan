@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-      
   end
 
   def home
@@ -13,20 +12,20 @@ class SessionsController < ApplicationController
   def flow_to_join
   end
 
-  def create
+  def login
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      if user.role == 2
+      if user.role == "member"
         flash[:success] = "ログインしました。"
-        redirect_to clinics_path
-      elsif user.role == 1
+        render 'member_home'
+      elsif user.role == "admin"
         flash[:success] = "管理者としてログインしました。"
-        redirect_to clinics_path
+        render 'member_home'
       end
     else
       flash[:danger] = "メールアドレス、またはパスワードに間違いがあります。"
-      render 'new'
+      redirect_to root_path
     end
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'sessions#home'
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   get 'service-content', to: 'sessions#service_content'
   get 'flow-to-join', to: 'sessions#flow_to_join'
   get 'greeting', to: 'sessions#greeting'
+  post 'login', to: 'sessions#login'
 
   
 end
