@@ -1,0 +1,29 @@
+<div class="nav-link popupModal1">
+  <input type="radio" name="modalPop" id="pop11" />
+  <label for="pop11">ログイン</label>
+  <input type="radio" name="modalPop" id="pop12" />
+  <label for="pop12">CLOSE</label>
+  <input type="radio" name="modalPop" id="pop13" />
+  <label for="pop13">×</label>
+  <div class="modalPopup2">
+    <div class="modalPopup3">
+      <h2 class="modalTitle">ログイン</h2>
+      <div class="modalMain">
+        <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |form| %>
+          <%#= form_tag login_path do %>
+          <div class="form-group">
+            <%= label_tag :email, "メールアドレス", :class => "login-label" %><br/>
+            <%= email_field_tag :email, params[:email], :class => "form-control", placeholder: "Enter email" %>
+          </div>
+          <div class="form-group">
+            <!-- second parameter is the content to be written inside label parameter, you can also pass nil which will humanize the first parameter -->
+            <%= label_tag :password, "パスワード", :class => "password-label" %><br/>
+            <%= password_field_tag :password, params[:password], :class => "form-control" %>
+          </div>
+          <br>
+          <div><%= submit_tag "ログイン", :class => "btn btn-primary" %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

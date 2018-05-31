@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
   def home
   end
 
+  def member_home
+  end
+
   def whats_vc
   end
 
@@ -18,11 +21,10 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       if user.role == "member"
         flash[:success] = "ログインしました。"
-        render 'member_home'
       elsif user.role == "admin"
         flash[:success] = "管理者としてログインしました。"
-        render 'member_home'
       end
+      redirect_to "/member_home"
     else
       flash[:danger] = "メールアドレス、またはパスワードに間違いがあります。"
       redirect_to root_path

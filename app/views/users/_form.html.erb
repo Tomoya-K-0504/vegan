@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
   </div>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= form.label :sex %>
-    <%= form.number_field :sex, id: :user_sex %>
+    <%= form.text_field :sex, id: :user_sex %>
   </div>
 
   <div class="field">

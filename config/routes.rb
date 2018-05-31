@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'flow-to-join', to: 'sessions#flow_to_join'
   get 'greeting', to: 'sessions#greeting'
   post 'login', to: 'sessions#login'
+  get 'logout', to: 'sessions#destroy'
+  get 'member_home', to: 'sessions#member_home'
 
   
 end

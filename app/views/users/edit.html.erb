@@ -1,6 +1,128 @@
-<h1>Editing User</h1>
+<%= render 'sessions/header' %>
 
-<%= render 'form', user: @user %>
+<section class="mypage">
+  <h2>詳細設定</h2>
+  <%= form_with(model: @user, local: true) do |form| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div>
+    ひとことのカラム追加するひとことのカラム追加するひとことのカラム追加するひとことのカラム追加する
+  </div>
+  <hr>
+  <div class="user-info-setting">
+    <div class="account-info">
+      <div class="field">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, id: :@user_first_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, id: :@user_last_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email, id: :@user_email %>
+      </div>
+      <div class="password">
+        <div class="field">
+          <%= form.label :password %>
+          <%= form.password_field :password, id: :@user_password %>
+        </div>
+
+        <div class="field">
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation %>
+        </div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="field">
+        <%= form.label :twitter %>
+        <%= form.text_field :twitter, id: :@user_twitter %>
+      </div>
+
+      <div class="field">
+        <%= form.label :facebook %>
+        <%= form.text_field :facebook, id: :@user_facebook %>
+      </div>
+
+      <div class="field">
+        <%= form.label :contact %>
+        <%= form.text_field :contact, id: :@user_contact %>
+      </div>
+    </div>
+    <hr>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+  <% end %>
+
+  <%= link_to 'Show', @user %> |
+  <%= link_to 'Back', @users_path %>
+
+</section>
+
+
+
+
+
+
+<!--  <div class="field">-->
+    <%#= form.label :role %>
+    <%#= form.text_field :role, id: :@user_role %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :sex %>
+    <%#= form.text_field :sex, id: :@user_sex %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :age %>
+    <%#= form.number_field :age, id: :@user_age %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :job %>
+    <%#= form.text_field :job, id: :@user_job %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :born_in %>
+    <%#= form.text_field :born_in, id: :@user_born_in %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :living_address %>
+    <%#= form.text_field :living_address, id: :@user_living_address %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :principle %>
+    <%#= form.text_field :principle, id: :@user_principle %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label :trigger %>
+    <%#= form.text_field :trigger, id: :@user_trigger %>
+<!--  </div>-->
+
+
+
+<!--  <div class="field">-->
+    <%#= form.label :career %>
+    <%#= form.text_field :career, id: :@user_career %>
+<!--  </div>-->
