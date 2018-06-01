@@ -1,0 +1,102 @@
+<section class="mypage">
+  <h2>登録確認</h2>
+  <%= image_tag 'rogo_full.png' %>
+  <h3 class="name">
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+    <%#= link_to '修正', edit_user_path(@user) %>
+  </h3>
+  <hr>
+  <div>
+    ひとことのカラム追加するひとことのカラム追加するひとことのカラム追加するひとことのカラム追加する
+  </div>
+  <hr>
+  <div class="detail">
+    <h3>詳細</h3>
+    <p>
+      <strong>性別 </strong>
+      <%= @user.sex %>
+      <strong>Age:</strong>
+      <%= @user.age %>
+      <strong>Job:</strong>
+      <%= @user.job %>
+
+      <strong>Born in:</strong>
+      <%= @user.born_in %>
+
+      <strong>Living address:</strong>
+      <%= @user.living_address %>
+
+      <!--      <strong>Email:</strong>-->
+      <%#= @user.email %>
+  </div>
+  <br>
+  <div class="principle">
+    <p>
+      <strong>Principle:</strong>
+      <%= @user.principle %>
+    </p>
+
+    <p>
+      <strong>Trigger:</strong>
+      <%= @user.trigger %>
+    </p>
+  </div>
+  <br>
+  <div class="contact">
+    <p>
+      <strong>Twitter:</strong>
+      <%= @user.twitter %>
+    </p>
+
+    <p>
+      <strong>Facebook:</strong>
+      <%= @user.facebook %>
+    </p>
+
+    <p>
+      <strong>Contact:</strong>
+      <%= @user.contact %>
+    </p>
+  </div>
+  <hr>
+  <div>
+    <p>
+      <strong>Career:</strong>
+      <%= @user.career %>
+    </p>
+  </div>
+
+  <div class="capital">
+    <%= @capital %>
+  </div>
+
+  <div class="plan">
+    <%= @plan %>
+  </div>
+  <%= form_for @user, :url => { :controller => :users, :action => :create } do |form| %>
+
+    <%= form.hidden_field :first_name, id: :user_first_name %>
+    <%= form.hidden_field :last_name, id: :user_last_name %>
+    <%= form.hidden_field :email, id: :user_email %>
+    <%= form.hidden_field :password, id: :user_password %>
+    <%= form.hidden_field :password_confirmation %>
+    <%= form.hidden_field :sex, id: :user_sex %>
+    <%= form.hidden_field :age, id: :user_age %>
+    <%= form.hidden_field :job, id: :user_job %>
+    <%= form.hidden_field :born_in, id: :user_born_in %>
+    <%= form.hidden_field :living_address, id: :user_living_address %>
+    <%= form.hidden_field :principle, id: :user_principle %>
+    <%= form.hidden_field :trigger, id: :user_trigger %>
+    <%= form.hidden_field :twitter, id: :user_twitter %>
+    <%= form.hidden_field :facebook, id: :user_facebook %>
+    <%= form.hidden_field :contact, id: :user_contact %>
+    <%= form.hidden_field :career, id: :user_career %>
+    <%= hidden_field_tag :capital, @capital %>
+    <%= hidden_field_tag :plan, @plan %>
+
+    <div class="actions">
+      <%= form.submit '登録' %>
+    </div>
+  <% end %>
+</section>

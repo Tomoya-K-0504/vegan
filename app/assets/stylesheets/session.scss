@@ -184,6 +184,17 @@ body {
   }
 }
 
+.agree-to-condition {
+  @extend %home-section;
+  @extend %home-section-child;
+
+  .join-promise, .about-personal-info {
+    border: $border-main;
+  }
+}
+
+//================
+
 .rep-history {
   @extend %home-section;
   @extend %home-section-child;
@@ -263,6 +274,7 @@ body {
     border: none;
   }
 }
+//================
 
 
 //=====================

@@ -17,15 +17,29 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # POST /fill-member-info
+  def refill_member_info
+  end
+
+  def select_plan
+    @user = User.new(user_params)
+  end
+
+  def confirm_register
+    @user = User.new(user_params)
+    @capital = params[:capital]
+    @plan = params[:plan]
+  end
+
   # GET /users/1/edit
   def edit
   end
 
-  # POST /users
+  # POST /register-complete
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    debugger
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
   def flow_to_join
   end
 
+  def agree_to_condition
+  end
+
   def login
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])

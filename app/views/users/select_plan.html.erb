@@ -1,0 +1,71 @@
+<section class="select-plan">
+
+  <%= form_for @user, :url => { :controller => :users, :action => :confirm_register } do |form| %>
+    <p>
+      VCの加入にあたり...<br>
+      また、...
+    </p>
+    <br>
+    <h3><strong>出資金について</strong></h3>
+    <div class="about-capital">
+      出資金とは、日本ヴィーガンコミュニティ(以下VC)に加入する時にお預かりし、運営資金とさせていただくお金のことです。VCを脱退・退会する時には返還されます。<br>
+      <br>
+      VCはメンバーが力を合わせ、自らの願いを叶える自主的な組織です。その為、全メンバーが、出資金を持ち寄って利用・運営しています。出資金は、他団体における入会金や会費、寄付金などとは異なり、VCのあらゆる事業の元手になる資金として運用されます。<br>
+      一口500円から出資し、メンバーになることが可能ですが、二口1000円から二百口100000円までの出資をお願いしています。出来るだけ多くの出資金が、より良い事業運営の元手になるので、よろしくお願いします。<br>
+    </div>
+    <br>
+    <h3><strong>出資する口数の選択</strong></h3>
+
+    <div class="form-group">
+      <!-- second parameter is the content to be written inside label parameter, you can also pass nil which will humanize the first parameter -->
+      <%= label_tag :capital, "一口 : ¥1000/ 月", :class => "capital" %><br/>
+      <%= number_field_tag :capital, params[:capital], :class => "form-control col-sm-1" %>
+    </div>
+    <br>
+    <h3><strong>利用料金について</strong></h3>
+    <div class="about-fee">
+      利用料金とは、日本ヴィーガンコミュニティ(以下VC)のメンバーとしてサービスやイベントを利用する為にいただくお金です。出資金とは異なり、返還されることはありません。<br>
+      <br>
+      利用料金も出資金と同様にあらゆる事業運営や活動に運用され、メンバーへ価値を還元する為のお金ですので、出来るだけ多くの支払いをお願いしています。<br>
+      &lt;基本料金&gt;<br>
+        月額500円からの基本料金で、メンバーとして様々なサービスを受けることが可能になります。<br>
+        また、金額に応じてサービスが向上します。<br>
+      &lt;追加料金&gt;<br>
+          様々なイベントの参加や、商品の購入など、基本料金とは別に支払うお金です。<br>
+    </div>
+    <br>
+    <h3><strong>基本料金設定</strong></h3>
+
+    <div class="form-group">
+      <!-- second parameter is the content to be written inside label parameter, you can also pass nil which will humanize the first parameter -->
+      <%= label_tag :plan, "メンバーランク", :class => "plan" %><br/>
+      <%= select_tag :plan, options_for_select({"学生コース「EGG」" => "egg", "基本コース「CHICK」" => "chick", "ロイヤルコース「CHICKEN」" => "chicken"}), :class => "form-control col-sm-2" %>
+    </div>
+    <div class="plan-table">
+      <p>各サービス特典</p>
+      <%= image_tag 'rogo_full.png'%>
+    </div>
+
+    <%= form.hidden_field :first_name, id: :user_first_name %>
+    <%= form.hidden_field :last_name, id: :user_last_name %>
+    <%= form.hidden_field :email, id: :user_email %>
+    <%= form.hidden_field :password, id: :user_password %>
+    <%= form.hidden_field :password_confirmation %>
+    <%= form.hidden_field :sex, id: :user_sex %>
+    <%= form.hidden_field :age, id: :user_age %>
+    <%= form.hidden_field :job, id: :user_job %>
+    <%= form.hidden_field :born_in, id: :user_born_in %>
+    <%= form.hidden_field :living_address, id: :user_living_address %>
+    <%= form.hidden_field :principle, id: :user_principle %>
+    <%= form.hidden_field :trigger, id: :user_trigger %>
+    <%= form.hidden_field :twitter, id: :user_twitter %>
+    <%= form.hidden_field :facebook, id: :user_facebook %>
+    <%= form.hidden_field :contact, id: :user_contact %>
+    <%= form.hidden_field :career, id: :user_career %>
+
+    <div class="actions">
+      <%= form.submit '内容の確認' %>
+    </div>
+  <% end %>
+
+</section>

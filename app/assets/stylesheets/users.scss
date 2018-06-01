@@ -13,3 +13,8 @@
     font-size: 30px;
   }
 }
+
+.member-info, .select-plan {
+  @extend %home-section;
+  @extend %home-section-child;
+}
