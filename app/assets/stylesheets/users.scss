@@ -17,4 +17,20 @@
 .member-info, .select-plan {
   @extend %home-section;
   @extend %home-section-child;
+  .form-group form-control {
+    margin: 15px auto;
+  }
+}
+
+.v-meet {
+  @extend %home-section;
+  @extend %home-section-child;
+}
+
+.v-meet-form {
+  .col-lg-6 {
+    width: 90%;
+    margin: 1% auto;
+
+  }
 }

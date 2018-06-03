@@ -1,6 +1,6 @@
 <section class="mypage">
   <h2>登録確認</h2>
-  <%= image_tag 'rogo_full.png' %>
+  <%#= image_tag 'rogo_full.png' %>
   <h3 class="name">
     <%= @user.first_name %>
     <%= @user.last_name %>
@@ -96,7 +96,7 @@
     <%= hidden_field_tag :plan, @plan %>
 
     <div class="actions">
-      <%= form.submit '登録' %>
+      <%= form.submit '登録', class: 'btn btn-info' %>
     </div>
   <% end %>
 </section>

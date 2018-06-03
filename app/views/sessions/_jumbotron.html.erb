@@ -1,9 +1,22 @@
 <section class="vision">
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <p class="lead">やさしい暮らし</p>
-      <h1 class="display-3">笑顔あふれるVegan Lifeを共創する</h1>
-      <p class="logo-small"></p>
+  <% if logged_in? %>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+<!--        <p class="lead">ホーム</p>-->
+        <h1 class="display-3">ホーム</h1>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <p class="lead">やさしい暮らし</p>
+        <h2 class="display-3">笑顔あふれるVegan Lifeを共創する</h2>
+
+        <a href="become-member">
+          <button class="btn btn-info">メンバーになる</button>
+          <%#= image_tag 'become-member-button.png' %>
+        </a>
+      </div>
+    </div>
+  <% end %>
 </section>

@@ -5,7 +5,9 @@
 
 
 <section class="whats-vc">
-  <h2>VCとは</h2>
+  <div class="title">
+    <h2>VCとは</h2>
+  </div>
   <%= image_tag 'rogo_full.png' %>
   <p>VCとは、日本ヴィーガン・コミュニティ(Japanese Vegans’ Community) の略称です。<br>
     VCは、ヴィーガンを実践するメンバーによって構成され、一人ひとりの力を合わせ、
@@ -22,7 +24,9 @@
 <%= render 'sessions/section_service_content' %>
 
 <section class="flow-to-join">
-  <h2>入会の流れ</h2>
+  <div class="title">
+    <h2>入会の流れ</h2>
+  </div>
   <h4>VCは、希望者全員が入会することができます。<br>
       VCメンバーになるメリットと流れを紹介します。
   </h4>
@@ -35,25 +39,30 @@
 
   <div class="member-flow">
     <h5>メンバーになる流れ</h5>
-    <%= image_tag 'step_1.png' %>
-    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
-    <%= image_tag 'step_2.png' %>
-    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
-    <%= image_tag 'step_3.png' %>
-    <%= image_tag 'right-arrow.png', class: "right-arrow" %>
-    <%= image_tag 'step_4.png' %>
+    <div class="steps">
+      <%= image_tag 'step_1.png' %>
+      <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+      <%= image_tag 'step_2.png' %>
+      <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+      <%= image_tag 'step_3.png' %>
+      <%= image_tag 'right-arrow.png', class: "right-arrow" %>
+      <%= image_tag 'step_4.png' %>
+    </div>
+    <a href="/flow-to-join" class="bcm-mmb-btn">
+      <%= image_tag 'become-member-button.png', class: 'bcm-mmb-btn' %>
+    </a>
   </div>
-  <div>
-    <a href="/flow-to-join" class="btn btn-primary">メンバーになる</a>
-  </div>
-  <div class="num-members">
-    <p>現在のメンバー数</p>
-    <p>1</p>
-  </div>
+
+<!--  <div class="num-members">-->
+<!--    <p>現在のメンバー数</p>-->
+<!--    <p>1</p>-->
+<!--  </div>-->
 </section>
 
 <section class="greeting">
-  <h2 class="clearfix">代表の挨拶</h2>
+  <div class="title">
+    <h2 class="clearfix">代表のあいさつ</h2>
+  </div>
   <%#= image_tag 'greeting_small.jpg' %>
   <p class="greet-text clearfix">
     高校三年生の秋に、“ぺちゃんこの猫”を見たことがきっかけに、多くの事実を知りヴィーガンになりました。<br>

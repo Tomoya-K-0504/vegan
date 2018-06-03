@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       elsif user.role == "admin"
         flash[:success] = "管理者としてログインしました。"
       end
-      redirect_to "/member_home"
+      redirect_to "/member-home"
     else
       flash[:danger] = "メールアドレス、またはパスワードに間違いがあります。"
       redirect_to root_path

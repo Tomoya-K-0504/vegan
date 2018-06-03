@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'fill-member-info', to: 'users#refill_member_info'
   post 'complete-register', to: 'users#create'
 
+  post 'user-search', to: 'users#search'
   resources :users
   
 end

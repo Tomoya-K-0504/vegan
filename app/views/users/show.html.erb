@@ -4,16 +4,16 @@
 
 <section class="mypage">
   <h2>マイページ</h2>
-  <%= image_tag 'rogo_full.png' %>
+  <%#= image_tag 'rogo_full.png' %>
   <h3 class="name">
     <%= @user.first_name %>
     <%= @user.last_name %>
-      <%= link_to '編集', edit_user_path(@user) %>
+      <%= link_to '編集', edit_user_path(@user), class: 'btn btn-info' %>
   </h3>
-  <hr>
-  <div>
-    ひとことのカラム追加するひとことのカラム追加するひとことのカラム追加するひとことのカラム追加する
-  </div>
+<!--  <hr>-->
+<!--  <div>-->
+<!--    ひとことのカラム追加するひとことのカラム追加するひとことのカラム追加するひとことのカラム追加する-->
+<!--  </div>-->
   <hr>
   <div class="detail">
     <h3>詳細</h3>

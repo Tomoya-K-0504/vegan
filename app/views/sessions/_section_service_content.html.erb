@@ -1,18 +1,28 @@
 <section class="service-content">
-  <h2>事業内容</h2>
-  <h4>VCが運営する事業を紹介します。</h4>
-  <a href="/service-content#v-talk" class="service-content-one">
-    <%= image_tag 'v-talk.png' %>
-  </a>
-  <a href="/service-content#v-meat" class="service-content-one">
-    <%= image_tag 'v-meet.png' %>
-  </a>
-  <a href="/service-content#v-cook" class="service-content-one">
-    <%= image_tag 'v-cook.png' %>
-  </a>
-  <a href="/service-content#v-choice" class="service-content-one">
-    <%= image_tag 'v-choice.png' %>
-  </a>
-  <%= image_tag '' %>
-  <%= image_tag '' %>
+  <% if logged_in? %>
+    <div class="title">
+      <h2>サービスを利用する</h2>
+    </div>
+  <% else %>
+    <div class="title">
+      <h2>事業内容</h2>
+    </div>
+    <h4>VCが運営する事業を紹介します。</h4>
+  <% end %>
+  <div class="service-contents">
+    <a href="/service-content#v-talk" class="service-content-one">
+      <%= image_tag 'v-talk.png' %>
+    </a>
+    <a href="/service-content#v-meat" class="service-content-one">
+      <%= image_tag 'v-meet.png' %>
+    </a>
+    <a href="/service-content#v-cook" class="service-content-one">
+      <%= image_tag 'v-cook.png' %>
+    </a>
+    <a href="/service-content#v-choice" class="service-content-one">
+      <%= image_tag 'v-choice.png' %>
+    </a>
+    <%= image_tag '' %>
+    <%= image_tag '' %>
+  </div>
 </section>

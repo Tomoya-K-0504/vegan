@@ -2,8 +2,8 @@
 
   <%= form_for @user, :url => { :controller => :users, :action => :confirm_register } do |form| %>
     <p>
-      VCの加入にあたり...<br>
-      また、...
+      VCの加入にあたり、事業や活動の元手となる出資金をお願いしています。<br>
+      また、利用にあたっては、各メンバーに合わせた料金の選択が可能です。
     </p>
     <br>
     <h3><strong>出資金について</strong></h3>
@@ -39,12 +39,12 @@
     <div class="form-group">
       <!-- second parameter is the content to be written inside label parameter, you can also pass nil which will humanize the first parameter -->
       <%= label_tag :plan, "メンバーランク", :class => "plan" %><br/>
-      <%= select_tag :plan, options_for_select({"学生コース「EGG」" => "egg", "基本コース「CHICK」" => "chick", "ロイヤルコース「CHICKEN」" => "chicken"}), :class => "form-control col-sm-2" %>
+      <%= select_tag :plan, options_for_select({"学生コース「EGG」" => "egg", "基本コース「CHICK」" => "chick", "ロイヤルコース「CHICKEN」" => "chicken"}), :class => "form-control col-sm-3" %>
     </div>
-    <div class="plan-table">
-      <p>各サービス特典</p>
-      <%= image_tag 'rogo_full.png'%>
-    </div>
+<!--    <div class="plan-table">-->
+<!--      <p>各サービス特典</p>-->
+      <%#= image_tag 'rogo_full.png'%>
+<!--    </div>-->
 
     <%= form.hidden_field :first_name, id: :user_first_name %>
     <%= form.hidden_field :last_name, id: :user_last_name %>
@@ -64,7 +64,7 @@
     <%= form.hidden_field :career, id: :user_career %>
 
     <div class="actions">
-      <%= form.submit '内容の確認' %>
+      <%= form.submit '内容の確認', class: 'btn btn-info' %>
     </div>
   <% end %>
 

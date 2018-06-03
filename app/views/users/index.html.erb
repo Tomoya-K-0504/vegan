@@ -1,55 +1,85 @@
+<%= render 'sessions/header' %>
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="v-meet-form">
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form_tag('/user-search') do %>
+        <div class="input-group">
+          <%= text_field_tag :term, '', class: 'form-control', placeholder: '名前' %>
+          <span class="input-group-btn">
+            <%= submit_tag '検索', class: 'btn btn-info' %>
+          </span>
+<!--        <input type="text" class="form-control" placeholder="名前、地域">-->
+<!--        <span class="">-->
+<!--            <button class="btn btn-default" type="button">検索</button>-->
+<!--          </span>-->
+      </div><!-- /input-group -->
+      <% end %>
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div>
+<section class="v-meet">
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>Job</th>
-      <th>Born in</th>
-      <th>Living address</th>
-      <th>Principle</th>
-      <th>Trigger</th>
-      <th>Twitter</th>
-      <th>Facebook</th>
-      <th>Contact</th>
-      <th>Career</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% if @users.blank? %>
+    <h2>V-Meet</h2>
+    <%= image_tag '' %>
+    <h2>心から笑顔でいられる友人と出会おう</h2>
+    <p>
+      全メンバーのプロフィールを蓄積する事で、
+      メンバー同士が簡単に交流できるシステムを作り、
+      心から笑顔でいられる友人と出会えるサービスを提供します。
+    </p>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
-        <td><%= user.sex %></td>
-        <td><%= user.age %></td>
-        <td><%= user.job %></td>
-        <td><%= user.born_in %></td>
-        <td><%= user.living_address %></td>
-        <td><%= user.principle %></td>
-        <td><%= user.trigger %></td>
-        <td><%= user.twitter %></td>
-        <td><%= user.facebook %></td>
-        <td><%= user.contact %></td>
-        <td><%= user.career %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% else %>
+    <div class="title">
+      <h2>該当するユーザーが<%= @users.length %>名見つかりました。</h2>
+    </div>
+    <table>
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th>First </th>-->
+<!--        <th>Email</th>-->
+<!--        <th>Role</th>-->
+<!--        <th>Sex</th>-->
+<!--        <th>Age</th>-->
+<!--        <th>Job</th>-->
+<!--        <th>Born in</th>-->
+<!--        <th>Living address</th>-->
+<!--        <th>Principle</th>-->
+<!--        <th>Trigger</th>-->
+<!--        <th>Twitter</th>-->
+<!--        <th>Facebook</th>-->
+<!--        <th>Contact</th>-->
+<!--        <th>Career</th>-->
+<!--        <th colspan="3"></th>-->
+<!--      </tr>-->
+<!--      </thead>-->
 
-<br>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <a href=<%= "/users/" + user.id.to_s %> >
+              <%= user.first_name %>
+              <%= user.last_name %>
+            </a>
+          </td>
 
-<%= link_to 'New User', new_user_path %>
+<!--          <td><%#= user.twitter %></td>-->
+<!--          <td><%#= user.facebook %></td>-->
+<!--          <td><%#= user.contact %></td>-->
+<!--          <td><%#= user.career %></td>-->
+<!--          <td><%#= link_to 'Show', user %></td>-->
+<!--          <td><%#= link_to 'Edit', edit_user_path(user) %></td>-->
+<!--          <td><%#= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure?'} %></td>-->
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  <% end %>
+  <%#= link_to 'New User', new_user_path %>
+</section>
+

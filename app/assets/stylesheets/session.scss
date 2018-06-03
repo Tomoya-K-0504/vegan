@@ -1,23 +1,65 @@
 @import "application";
 $border-main: 1px solid #666666;
+$main-color: #227D51;
+$accent-base: #FEF5E3;
+$accent-color: #F6C555;
 
-%home-section {
-  border: $border-main;
-  margin: 10px auto;
-  padding: 1% 2%;
-  height: 80%;
-  width: 80%;
-}
-
-%home-section-child {
-  * {
-    margin: auto;
-    text-align: center;
+%title {
+  .title {
+    background-color: $main-color;
+    padding: 0% 0%;
+    h2 {
+      color: white;
+    }
   }
 }
 
-.header {
+%btn-info {
+  .btn-info {
+    background: white;
+    border-color: $main-color;
+    color: $main-color;
+  }
+  .btn-info:hover {
+    background: $main-color;
+  }
+}
 
+%image-click {
+  img:hover {
+    box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+  }
+  a:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+%home-section {
+  border: $border-main;
+  margin: 15px auto;
+  height: 80%;
+  width: 80%;
+
+  @extend %title;
+}
+
+
+
+%home-section-child {
+  * {
+    padding: 1% 2%;
+    text-align: center;
+    line-height: 1.7em;
+  }
+  @extend %btn-info;
+}
+
+.header {
+  .navbar {
+    background: white;
+  }
 }
 
 body {
@@ -41,14 +83,16 @@ body {
   @extend %home-section;
   @extend %home-section-child;
 
-  img {
-    width: 40%;
+  .service-contents {
+    img {
+      width: 40%;
+    }
+    @extend %image-click;
+    .service-content-one {
+      padding: 1% 6%;
+    }
   }
 
-  a:hover {
-    box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
-    opacity: 0.8;
-  }
 }
 
 .flow-to-join {
@@ -60,11 +104,20 @@ body {
   }
 
   .member-flow {
-    img {
-      width: 200px;
+    .steps {
+      img {
+        width: 200px;
+      }
+      .right-arrow {
+        padding: 0px 0px;
+        width: 30px;
+      }
     }
-    .right-arrow {
-      width: 30px;
+    @extend %image-click;
+    .bcm-mmb-btn {
+      img {
+        width: 250px;
+      }
     }
   }
 }
@@ -95,7 +148,27 @@ body {
   }
 }
 
-.vision, .mission, .value, .how-it-works, .history {
+.vision {
+  text-align: center;
+  text-shadow: 2px 2px black;
+  img {
+    width: 180px;
+  }
+  .jumbotron {
+    background: $main-color;
+    color: white;
+    .display-3 {
+      margin-bottom: 6%;
+    }
+    .btn {
+      box-shadow: 2.5px 2.5px black;
+    }
+  }
+  @extend %btn-info;
+
+}
+
+.mission, .value, .how-it-works, .history {
   @extend %home-section;
   @extend %home-section-child;
   @extend %center-img;
